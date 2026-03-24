@@ -697,20 +697,22 @@ def run(config, credentials_path=CREDENTIALS_FILE, out_dir="output_ndvi"):
 # ---------------------------------------------------------------------------
 
 CONFIG = {
-    "ponto_id": "ponto_7",
+    "ponto_id": "ponto_10",
 
     # Meta de pares a coletar
-    "meta_pares": 12,
+    "meta_pares": 10,
 
     # Bbox do ponto: [minLon, minLat, maxLon, maxLat]
     "bbox": [
--43.3500, -9.3000, -43.3440, -9.2940
-],
+-40.75080,
+-7.23072,
+-40.74565,
+-7.22547],
 
     # Janela em dias para buscar Sentinel-2 em torno de cada data MODIS
     # 0 = data exata; 1 = +/-1 dia para compensar fuso horario
     # Mantenha baixo (0 ou 1) para garantir comparacao temporal valida
-    "janela_dias": 1,
+    "janela_dias": 3,
 
     # Se True, gera RGB apenas para a primeira cena nova encontrada
     # Se False, gera RGB para todas as cenas (mais lento)
