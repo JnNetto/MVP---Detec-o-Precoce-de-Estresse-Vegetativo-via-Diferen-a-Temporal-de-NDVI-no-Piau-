@@ -127,7 +127,7 @@ def fetch_modis_dates(agroapi_token, bbox):
     valores = data.get("listaSerie", [])
 
     # Filtra datas com valor valido (nao None, nao negativo) e a partir de 2023
-    ano_minimo = 2023
+    ano_minimo = 2025
     pares = []
     for d, v in zip(datas, valores):
         if v is not None and float(v) > 0 and d[:4] >= str(ano_minimo):
@@ -703,16 +703,15 @@ CONFIG = {
     "meta_pares": 10,
 
     # Bbox do ponto: [minLon, minLat, maxLon, maxLat]
-    "bbox": [
--40.75080,
--7.23072,
--40.74565,
--7.22547],
+    "bbox": [-42.48340,
+-9.07530,
+-42.47849,
+-9.07091],
 
     # Janela em dias para buscar Sentinel-2 em torno de cada data MODIS
     # 0 = data exata; 1 = +/-1 dia para compensar fuso horario
     # Mantenha baixo (0 ou 1) para garantir comparacao temporal valida
-    "janela_dias": 3,
+    "janela_dias": 1,
 
     # Se True, gera RGB apenas para a primeira cena nova encontrada
     # Se False, gera RGB para todas as cenas (mais lento)
